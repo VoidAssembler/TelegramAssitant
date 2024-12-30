@@ -1,0 +1,26 @@
+spring:
+  datasource:
+    url: ${POSTGRES_URL:jdbc:postgresql://localhost:5432/telegram_bot}
+    username: ${POSTGRES_USER:postgres}
+    password: ${POSTGRES_PASSWORD:postgres}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+bot:
+  token: ${BOT_TOKEN}
+  username: ${BOT_USERNAME}
+
+services:
+  whisper:
+    api-url: ${WHISPER_API_URL}
+    api-key: ${WHISPER_API_KEY}
+  external:
+    api-url: ${EXTERNAL_API_URL}
+    api-key: ${EXTERNAL_API_KEY}
